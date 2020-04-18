@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Overview(props) {
     return (
@@ -27,7 +28,7 @@ export default function Overview(props) {
 
                             </div>
                             <div className="details col-md-6">
-                                <h3 className="product-title">men's shoes fashion</h3>
+    <h3 className="product-title">{props.title}</h3>
                                 <div className="rating">
                                     <div className="stars">
                                         <span className="fa fa-star checked"></span>
@@ -38,19 +39,14 @@ export default function Overview(props) {
                                     </div>
                                     <span className="review-no">41 reviews</span>
                                 </div>
-                                <p className="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-                                <h4 className="price">current price: <span>$180</span></h4>
+    <p className="product-description">{props.description}</p>
+    <h4 className="price">current price: <span>{props.price}</span></h4>
                                 <p className="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                                <h5 className="sizes">sizes:
+                                <h5 className="sizes">{props.brand}
                                 <span className="size" data-toggle="tooltip" title="small">s</span>
                                     <span className="size" data-toggle="tooltip" title="medium">m</span>
                                     <span className="size" data-toggle="tooltip" title="large">l</span>
                                     <span className="size" data-toggle="tooltip" title="xtra large">xl</span>
-                                </h5>
-                                <h5 className="colors">colors:
-                                <span className="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-                                    <span className="color green"></span>
-                                    <span className="color blue"></span>
                                 </h5>
                                 <div className="action">
                                     <button className="add-to-cart btn btn-default" type="button">add to cart</button>
@@ -60,6 +56,9 @@ export default function Overview(props) {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="container">
+            <Link to="/"> <button className="add-to-cart btn btn-default text-center" type="button">Back</button></Link>
             </div>
         </body>
     )
